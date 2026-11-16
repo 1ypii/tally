@@ -1,0 +1,22 @@
+framework:
+    rate_limiter:
+        signup:
+            policy: sliding_window
+            limit: 10
+            interval: '1 hour'
+        writes:
+            policy: token_bucket
+            limit: 60
+            rate: { interval: '1 minute', amount: 60 }
+        notice:
+            policy: sliding_window
+            limit: 5
+            interval: '1 hour'
+        password:
+            policy: sliding_window
+            limit: 5
+            interval: '15 minutes'
+        shared:
+            policy: sliding_window
+            limit: 120
+            interval: '1 minute'

@@ -1,0 +1,9 @@
+.git
+api/vendor
+api/var
+api/.env.local
+api/config/reference.php
+api/public/index.html
+api/public/assets
+web/node_modules
+web/dist

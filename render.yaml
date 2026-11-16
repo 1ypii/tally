@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: tally
+    runtime: docker
+    plan: free
+    healthCheckPath: /api/me
+    envVars:
+      - key: appsecret
+        generateValue: true
+      - key: databaseurl
+        sync: false

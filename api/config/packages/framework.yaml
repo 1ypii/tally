@@ -1,0 +1,16 @@
+framework:
+    secret: '%env(appsecret)%'
+    trusted_proxies: '%env(trustedproxies)%'
+    trusted_headers: ['x-forwarded-for', 'x-forwarded-proto', 'x-forwarded-host', 'x-forwarded-port']
+    session:
+        cookie_secure: auto
+        cookie_samesite: lax
+        cookie_httponly: true
+        cookie_lifetime: 0
+        gc_maxlifetime: 86400
+
+when@test:
+    framework:
+        test: true
+        session:
+            storage_factory_id: session.storage.factory.mock_file
